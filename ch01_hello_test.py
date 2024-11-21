@@ -1,12 +1,19 @@
+# Functions:
+
+def verif_name(myName,list_users):
+    # verify if name exists in dictionary
+    while True:
+        if myName in list_users:
+            myName = input("Nombre usuario existente, escriba otro: ")
+        return myName
+
 # This program says hello and asks for my name.
 list_users = {}
 while True:
     print('Hello world!')
     print('What is your name?')    # ask for their name
-    myName = input()
-    # verify if name in dictionary
-    if myName in list_users:
-        myName = input("Nombre usuario existente, escriba otro: ")
+    myName = verif_name(input(), list_users)
+
     print('It is good to meet you, ' + myName)
     print('The length of your name is:')
     print(len(myName))
