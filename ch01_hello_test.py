@@ -1,3 +1,27 @@
+import json
+import os
+
+# Define the file path and name
+file_path = 'data.json'
+
+def save_data(data):
+    # Write data to the file
+    with open(file_path, 'w') as f:
+        json.dump(data, f)
+
+def load_data():
+    # Read data from the file
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as f:
+            return json.load(f)
+    else:
+        return {}
+
+# Example usage:
+
+# data.append(new_data)
+# save_data(data)
+
 # Functions:
 
 
@@ -17,7 +41,9 @@ def verif_name(myName, list_users):
 
 
 # This program says hello and asks for my name.
-list_users = {'jorge': ['44', 'blue'], 'raul': ['47', 'red']}
+list_users = load_data()
+
+print(list_users)
 while True:
     print("Hello world!")
     print("What is your name?")  # ask for their name
@@ -43,5 +69,6 @@ while True:
     option = input("Continue? (leave blank and press ENTER to exit) > ")
     if option == "":
         print("cya later")
+        save_data(list_users)        
         break
 print(list_users)
