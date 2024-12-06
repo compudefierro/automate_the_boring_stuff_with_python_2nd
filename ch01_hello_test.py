@@ -17,14 +17,6 @@ def load_data():
     else:
         return {}
 
-# Example usage:
-
-# data.append(new_data)
-# save_data(data)
-
-# Functions:
-
-
 def verif_name(myName, list_users):
     # verify if name exists in dictionary
     while True:
